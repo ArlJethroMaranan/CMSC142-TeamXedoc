@@ -23,7 +23,7 @@ void shell(int a[], int n) {
     }
 }
 
-static void fillRowWithBacktrack(const int S[], int rowIndex, int subsetSum[][K + 1]) {
+void fillRowWithBacktrack(const int S[], int rowIndex, int subsetSum[][K + 1]) {
     int upto = rowIndex + 1;
     int nopts[upto + 2];
     int option[upto + 2][upto + 2];
@@ -81,7 +81,7 @@ static void fillRowWithBacktrack(const int S[], int rowIndex, int subsetSum[][K 
     }
 }
 
-static void printSubsetSumMatrix(const int S[], int length, int subsetSum[][K + 1]) {
+void printSubsetSumMatrix(const int S[], int length, int subsetSum[][K + 1]) {
     int i, j;
 
     printf("Subset sum matrix:\n    ");
@@ -100,7 +100,7 @@ static void printSubsetSumMatrix(const int S[], int length, int subsetSum[][K + 
     }
 }
 
-static void traceOneSubset(const int S[], int length, int subsetSum[][K + 1]) {
+void traceOneSubset(const int S[], int length, int subsetSum[][K + 1]) {
     int row = length - 1;
     int col = K;
     int picked[length];
