@@ -1,4 +1,10 @@
-# Combination & Subset Sum Programs (C)
+# Combination & Dynamic Programming (C)
+
+James Bryan Gregorio
+Arl Jethro Maranan
+André Luis Noche
+Gift Moses Perez
+Martin Adrian Plaza
 
 This repository contains **four standalone C programs** that explore **combinatorics and subset sum problems** using backtracking and dynamic programming techniques.
 
