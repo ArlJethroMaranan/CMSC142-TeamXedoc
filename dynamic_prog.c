@@ -1,6 +1,7 @@
 #include <stdio.h>
+#include <time.h>
 
-#define K 10
+#define K 5
 
 void swap(int *a, int *b) {
     int temp = *a;
@@ -143,7 +144,7 @@ static void traceOneSubset(const int S[], int length, int subsetSum[][K + 1]) {
 }
 
 int main(void) {
-    int S[] = {5, 2, 3, 4};
+    int S[] = {5, 2, 3, 1, 4, 8, 5, 7, 1, 2, 3, 7, 6, 8, 9, 1 , 3};
     int length = (int)(sizeof(S) / sizeof(S[0]));
     int subsetSum[length][K + 1];
     int i, j;
@@ -156,13 +157,17 @@ int main(void) {
         }
     }
 
+    clock_t start_time = clock();
+
     for (i = 0; i < length; ++i) {
         fillRowWithBacktrack(S, i, subsetSum);
     }
-
     printSubsetSumMatrix(S, length, subsetSum);
-
     traceOneSubset(S, length, subsetSum);
+
+    clock_t end_time = clock();
+    double time_taken = (double)(end_time - start_time) / CLOCKS_PER_SEC; // in seconds
+    printf("Execution time: %f seconds\n", time_taken);
 
     return 0;
 }

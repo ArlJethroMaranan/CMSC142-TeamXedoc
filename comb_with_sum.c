@@ -1,13 +1,16 @@
 #include <stdio.h>
+#include <time.h>
 
-#define N 5
+#define N 10
 
 int main(void) {
     int nopts[N + 2];
     int option[N + 2][N + 2];
-    int k = 10;
+    int k = 14;
     int count = 1;
     int start, move, i, j, candidate;
+
+    clock_t start_time = clock();
 
     move = start = 0;
     nopts[start] = 1;
@@ -52,6 +55,10 @@ int main(void) {
             nopts[--move]--;
         }
     }
+
+    clock_t end_time = clock();
+    double time_taken = (double)(end_time - start_time) / CLOCKS_PER_SEC; // in seconds
+    printf("Execution time: %f seconds\n", time_taken);
 
     return 0;
 }

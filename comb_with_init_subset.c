@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <time.h>
 
 #define N 10
 #define SUBSET_SIZE 3
@@ -16,6 +17,8 @@ int main(void) {
         temp_sum += subset[i];
     }
     temp_sum = k - temp_sum;
+
+    clock_t start_time = clock();
 
     move = start = 0;
     nopts[start] = 1;
@@ -70,6 +73,10 @@ int main(void) {
             nopts[--move]--;
         }
     }
+
+    clock_t end_time = clock();
+    double time_taken = (double)(end_time - start_time) / CLOCKS_PER_SEC; // in seconds
+    printf("Execution time: %f seconds\n", time_taken);
 
     return 0;
 }
